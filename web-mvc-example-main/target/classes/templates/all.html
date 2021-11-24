@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home page</title>
+</head>
+<body>
+
+<h2>All the books</h2>
+
+<table>
+    <thead>
+    <tr>
+        <th>Index</th>
+        <th>Word</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="word : ${books}">
+        <td th:text="${wordStat.index + 1}">Index</td>
+        <td th:text="${word}">A word</td>
+    </tr>
+    </tbody>
+</table>
+
+<hr/>
+<a href="/home">Home</a> | <a href="/non">Not available</a>
+</body>
+</html>
